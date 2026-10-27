@@ -14,7 +14,7 @@ try{
 var h=await (await fetch(SRC,{cache:'no-store'})).text();
 h=h.replace(/data:image\/jpeg;base64,[A-Za-z0-9+\/=]+/,function(){return LOGO;});
 R.forEach(function(p){h=h.split(p[0]).join(p[1]);});
-h=h.split('PROSIP').join('MONTASIP').split('Prosip').join('Montasip');
+h=h.split('PROSIP').join('MONTASIP').split('Prosip').join('Montasip').split('prosip').join('montasip');
 h=h.replace('</title>',function(){return '</title>\n'+MOCK;});
 document.open();document.write(h);document.close();
 }catch(e){document.getElementById('m').textContent='No se pudo cargar. Revise su conexión e intente de nuevo.';}
